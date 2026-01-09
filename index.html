@@ -1,108 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Fabi trintouuu! ✨</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabi Faz 30!</title>
 
   <style>
-    /* ===== RESET BÁSICO ===== */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
       min-height: 100vh;
+      background:
+        linear-gradient(
+          rgba(255, 190, 210, 0.55),
+          rgba(255, 160, 200, 0.55)
+        ),
+        url("fundo.png") center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
-      /* 🔴 FUNDO COM A IMAGEM QUE VOCÊ SUBIU */
-      background-image: url("fundo-fabi-30.png");
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-
-      color: #fff;
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 35px 25px;
+      max-width: 430px;
+      width: 100%;
       text-align: center;
-      padding: 40px 20px;
-    }
-
-    /* ===== OVERLAY ESTILO INSTAGRAM ===== */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(255,240,220,0.25),
-        rgba(255,180,200,0.35),
-        rgba(120,40,160,0.55)
-      );
-      z-index: -1;
-    }
-
-    /* ===== CARD PRINCIPAL ===== */
-    .card {
-      background: rgba(0,0,0,0.45);
-      max-width: 720px;
-      margin: auto;
-      padding: 40px 30px;
-      border-radius: 28px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
     }
 
     h1 {
-      font-size: 3em;
-      margin-bottom: 5px;
-      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
     }
 
-    h2 {
-      margin-top: 0;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 1em;
-      opacity: 0.9;
+    .subtitle {
+      font-size: 1.15rem;
+      margin-bottom: 25px;
     }
 
-    .info {
-      margin: 25px 0;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      font-weight: 800;
-      color: #ffd6ff;
-    }
-
-    /* ===== CONTAGEM REGRESSIVA ===== */
     .countdown {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px 0;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 30px;
     }
 
     .time-box {
-      background: rgba(255,255,255,0.15);
-      padding: 15px 18px;
-      border-radius: 16px;
-      min-width: 90px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      background: #fff;
+      padding: 12px 5px;
+      border-radius: 14px;
+      width: 22%;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
     .time-box span {
       display: block;
-      font-size: 1.8em;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: bold;
     }
 
     .time-box small {
-      font-size
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .info {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: block;
+      margin: 12px 0;
+      padding: 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #e07a8c, #f2a1b3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border-radius: 16px;
+      border: none;
+      margin-top: 15px;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>FABI FAZ 30!</h1>
+
+    <p class="subtitle">
+      Venha comemorar comigo o início de um novo ciclo.
+    </p>
+
+    <!-- CONTAGEM REGRESSIVA -->
+    <div class="countdown">
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>Dias</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>Horas</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Min</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seg</small>
+      </div>
+    </div>
+
+    <!-- INFORMAÇÕES -->
+    <p class="info">
+      📍 Av. Padre Cacique, 2893 – 3º andar<br>
+      🏢 Pontal Shopping – Bairro Cristal<br>
+      🗓 30 de Janeiro • ⏰ 17h
+    </p>
+
+    <!-- CONFIRMAR PRESENÇA WHATSAPP -->
+    <a
+      class="btn"
+      href="https://wa.me/5551982035451?text=Oi%20Fabi!%20Confirmo%20minha%20presen%C3%A7a%20na%20sua%20festa%20de%2030%20anos%20🎉🥂"
+      target="_blank">
+      ✅ Confirmar presença
+    </a>
+
+    <!-- ROTA -->
+    <a
+      class="btn"
+      href="https://www.google.com/maps/dir/?api=1&destination=Av.+Padre+Cacique,+2893,+Porto+Alegre"
+      target="_blank">
+      🗺 Ver rota no Google Maps
+    </a>
+
+    <!-- MAPA -->
+    <iframe
+      src="https://www.google.com/maps?q=Av.%20Padre%20Cacique,%202893,%20Porto%20Alegre&output=embed">
+    </iframe>
+
+    <!-- UPLOAD DE FOTOS -->
+    <a
+      class="btn"
+      href="https://drive.google.com/"
+      target="_blank">
+      📸 Enviar fotos da festa
+    </a>
+
+    <footer>
+      💖 Esperamos você!
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT CONTAGEM -->
+  <script>
+    const eventDate = new Date("2026-01-30T17:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff <= 0) return;
+
+      document.getElementById("days").innerText =
+        Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText =
+        Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").innerText =
+        Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("seconds").innerText =
+        Math.floor((diff / 1000) % 60);
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
