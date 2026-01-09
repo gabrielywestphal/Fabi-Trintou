@@ -20,8 +20,8 @@
       min-height: 100vh;
       background:
         linear-gradient(
-          rgba(255, 190, 210, 0.5),
-          rgba(255, 160, 200, 0.55)
+          rgba(255, 180, 200, 0.45),
+          rgba(255, 150, 190, 0.55)
         ),
         url("fundo.png") center / cover no-repeat;
       display: flex;
@@ -32,94 +32,105 @@
     }
 
     .container {
-  background: rgba(255, 255, 255, 0.72); /* mais transparente */
-  backdrop-filter: blur(10px);          /* blur mais suave e elegante */
-  border-radius: 22px;
-  padding: 26px 20px;                   /* menos espaço interno */
-  max-width: 340px;                     /* caixa mais estreita */
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
-}
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 22px 18px;
+      max-width: 300px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+      animation: fadeUp 1.2s ease-out forwards;
+    }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
+      font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .subtitle {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      line-height: 1.5;
-      margin-bottom: 26px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 16px;
     }
 
     .countdown {
       display: flex;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 26px;
+      gap: 6px;
+      margin-bottom: 16px;
     }
 
     .time-box {
-      background: #fff;
-      padding: 12px 6px;
-      border-radius: 14px;
+      background: rgba(255,255,255,0.85);
+      padding: 8px 4px;
+      border-radius: 12px;
       width: 100%;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .time-box span {
       display: block;
-      font-size: 1.55rem;
+      font-size: 1.2rem;
       font-weight: 600;
     }
 
     .time-box small {
-      font-size: 0.65rem;
-      letter-spacing: 1px;
+      font-size: 0.55rem;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .info {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 18px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin-bottom: 14px;
     }
 
-    .btn {
+    .button {
       display: block;
-      margin: 12px 0;
-      padding: 14px;
+      margin: 10px 0;
+      padding: 10px 16px;
+      font-size: 0.9rem;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 500;
       color: #fff;
       background: linear-gradient(135deg, #e07a8c, #f2a1b3);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.04);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
 
     .rsvp-info {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: #555;
       margin-top: -4px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     footer {
-      margin-top: 12px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #444;
+      margin-top: 8px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
   </style>
 </head>
@@ -134,7 +145,7 @@
       Venha comemorar comigo o início de um novo ciclo.
     </p>
 
-    <!-- CONTAGEM REGRESSIVA -->
+    <!-- CONTAGEM -->
     <div class="countdown">
       <div class="time-box">
         <span id="days">0</span>
@@ -154,15 +165,14 @@
       </div>
     </div>
 
-    <!-- INFORMAÇÕES -->
     <p class="info">
       🏢 Pontal Shopping – Bairro Cristal<br>
       🗓 30 de Janeiro • ⏰ 19h
     </p>
 
-    <!-- CONFIRMAR PRESENÇA -->
+    <!-- RSVP -->
     <a
-      class="btn"
+      class="button"
       href="https://wa.me/5551982035451?text=Oi%20Fabi!%20Confirmo%20minha%20presen%C3%A7a%20na%20sua%20festa%20de%2030%20anos%20🎉🥂"
       target="_blank">
       ✅ Confirmar presença
@@ -174,7 +184,7 @@
 
     <!-- ROTA -->
     <a
-      class="btn"
+      class="button"
       href="https://www.google.com/maps/dir/?api=1&destination=Av.+Padre+Cacique,+2893,+Porto+Alegre"
       target="_blank">
       🗺 Ver rota no Google Maps
