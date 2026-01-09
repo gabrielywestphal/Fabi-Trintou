@@ -4,37 +4,47 @@
   <meta charset="UTF-8">
   <title>Fabi trintouuu! ✨</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  background-image: url("fundo-fabi-30.png");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
+    /* ===== RESET BÁSICO ===== */
+    * {
+      box-sizing: border-box;
     }
 
-    /* Overlay estilo Instagram */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+
+      /* 🔴 FUNDO COM A IMAGEM QUE VOCÊ SUBIU */
+      background-image: url("fundo-fabi-30.png");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* ===== OVERLAY ESTILO INSTAGRAM ===== */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background: linear-gradient(
-        135deg,
-        rgba(255,0,150,0.65),
-        rgba(255,120,200,0.55),
-        rgba(124,58,237,0.55)
+        180deg,
+        rgba(255,240,220,0.25),
+        rgba(255,180,200,0.35),
+        rgba(120,40,160,0.55)
       );
       z-index: -1;
     }
 
+    /* ===== CARD PRINCIPAL ===== */
     .card {
       background: rgba(0,0,0,0.45);
       max-width: 720px;
@@ -71,6 +81,7 @@
       color: #ffd6ff;
     }
 
+    /* ===== CONTAGEM REGRESSIVA ===== */
     .countdown {
       display: flex;
       justify-content: center;
@@ -94,126 +105,4 @@
     }
 
     .time-box small {
-      font-size: 0.75em;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-
-    a.button {
-      display: inline-block;
-      margin: 12px;
-      padding: 14px 32px;
-      background: linear-gradient(135deg, #ff0080, #ff8ccf);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 40px;
-      font-weight: 600;
-      transition: 0.3s ease;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    a.button:hover {
-      transform: scale(1.08);
-      background: linear-gradient(135deg, #ffd6ff, #ff0080);
-      color: #5b21b6;
-    }
-
-    .gallery {
-      margin-top: 40px;
-    }
-
-    .gallery iframe {
-      width: 100%;
-      height: 420px;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 0.95em;
-      opacity: 0.85;
-    }
- @media (max-width: 768px) {
-  body {
-    background-position: center top;
-    background-attachment: scroll;
-  }
- } </style>
-</head>
-
-<body>
-  <div class="card">
-    <h1>✨ Fabi trintouuu! ✨</h1>
-    <h2>Glam • Moderno • Pop</h2>
-
-    <p class="info">
-      Sim, é oficial: <span class="highlight">30 anos</span> 😎✨  
-      E essa nova fase merece uma noite inesquecível!
-    </p>
-
-    <!-- CONTAGEM REGRESSIVA -->
-    <div class="countdown">
-      <div class="time-box">
-        <span id="days">0</span>
-        <small>Dias</small>
-      </div>
-      <div class="time-box">
-        <span id="hours">0</span>
-        <small>Horas</small>
-      </div>
-      <div class="time-box">
-        <span id="minutes">0</span>
-        <small>Min</small>
-      </div>
-      <div class="time-box">
-        <span id="seconds">0</span>
-        <small>Seg</small>
-      </div>
-    </div>
-
-    <p class="info">
-      📅 <strong>30 de janeiro</strong><br>
-      📍 <strong>20/9 – Pontal, Porto Alegre</strong>
-    </p>
-
-    <a class="button" href="https://www.google.com/maps/search/20%2F9+Pontal+Porto+Alegre" target="_blank">
-      📍 Como chegar
-    </a>
-
-    <a class="button" href="COLE_AQUI_O_LINK_DO_FORM" target="_blank">
-      📸 Enviar fotos da festa
-    </a>
-
-    <!-- GALERIA VISÍVEL -->
-    <div class="gallery">
-      <h2>📸 Momentos da festa</h2>
-      <p class="info">As fotos enviadas aparecem aqui 💖</p>
-
-      <!-- SUBSTITUA O LINK ABAIXO PELO LINK DE INCORPORAÇÃO DO ÁLBUM -->
-      <iframe src="COLE_AQUI_O_LINK_DO_ALBUM"></iframe>
-    </div>
-
-    <footer>
-      Dress code: brilho, glamour e atitude ✨💄
-    </footer>
-  </div>
-
-  <script>
-    const eventDate = new Date("2026-01-30T18:00:00").getTime();
-
-    setInterval(() => {
-      const now = new Date().getTime();
-      const diff = eventDate - now;
-
-      if (diff < 0) return;
-
-      document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
-      document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-    }, 1000);
-  </script>
-</body>
-</html>
+      font-size
