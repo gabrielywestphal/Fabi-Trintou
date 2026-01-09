@@ -2,209 +2,165 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabi faz 30!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Fabi Faz 30!</title>
-
-  <!-- FONTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonte elegante para o título -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       min-height: 100vh;
-     background:
-  linear-gradient(
-    rgba(255, 180, 200, 0.35),
-    rgba(255, 150, 190, 0.45)
-  ),
-  url("fundo.png") center bottom / 80% no-repeat;
+      font-family: 'Montserrat', sans-serif;
+      background:
+        linear-gradient(
+          rgba(255, 180, 200, 0.30),
+          rgba(255, 150, 190, 0.40)
+        ),
+        url("fundo.png") center bottom / 130% no-repeat;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 20px;
-      font-family: 'Poppins', sans-serif;
+      align-items: flex-start;
+      padding-top: 40px;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.68);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 22px 18px;
-      max-width: 300px;
+    .card {
       width: 90%;
+      max-width: 360px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      padding: 22px 20px;
       text-align: center;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.18);
-      animation: fadeUp 1.2s ease-out forwards;
+      animation: slideDown 1s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.3rem;
-      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #000;
       letter-spacing: 1px;
-      margin-bottom: 8px;
     }
 
     .subtitle {
       font-size: 0.95rem;
-      line-height: 1.4;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      color: #333;
     }
 
     .countdown {
       display: flex;
       justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 16px;
+      gap: 8px;
+      margin-bottom: 18px;
     }
 
     .time-box {
+      flex: 1;
       background: rgba(255,255,255,0.85);
-      padding: 8px 4px;
-      border-radius: 12px;
-      width: 100%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      padding: 10px 6px;
+      font-size: 0.75rem;
     }
 
     .time-box span {
       display: block;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .time-box small {
-      font-size: 0.55rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 1.1rem;
+      font-weight: bold;
     }
 
     .info {
-      font-size: 0.85rem;
-      line-height: 1.45;
+      font-size: 0.8rem;
       margin-bottom: 14px;
+      color: #222;
+      line-height: 1.4;
     }
 
-    .button {
+    a.button {
       display: block;
       margin: 10px 0;
       padding: 10px 16px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
+      background: #000;
       color: #fff;
-      background: linear-gradient(135deg, #e07a8c, #f2a1b3);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    a.button:hover {
+      transform: scale(1.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
-    .rsvp-info {
-      font-size: 0.75rem;
-      color: #555;
-      margin-top: -4px;
-      margin-bottom: 14px;
-    }
-
-    footer {
-      font-size: 0.8rem;
+    .deadline {
+      font-size: 0.7rem;
+      margin-top: 6px;
       color: #444;
-      margin-top: 8px;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-
+  <div class="card">
     <h1>FABI FAZ 30!</h1>
 
     <p class="subtitle">
       Venha comemorar comigo o início de um novo ciclo.
     </p>
 
-    <!-- CONTAGEM -->
     <div class="countdown">
-      <div class="time-box">
-        <span id="days">0</span>
-        <small>Dias</small>
-      </div>
-      <div class="time-box">
-        <span id="hours">0</span>
-        <small>Horas</small>
-      </div>
-      <div class="time-box">
-        <span id="minutes">0</span>
-        <small>Min</small>
-      </div>
-      <div class="time-box">
-        <span id="seconds">0</span>
-        <small>Seg</small>
-      </div>
+      <div class="time-box"><span id="days">0</span>DIAS</div>
+      <div class="time-box"><span id="hours">0</span>HORAS</div>
+      <div class="time-box"><span id="minutes">0</span>MIN</div>
+      <div class="time-box"><span id="seconds">0</span>SEG</div>
     </div>
 
-    <p class="info">
+    <div class="info">
+      📍 Av. Padre Cacique, 2893 – 3º andar<br>
       🏢 Pontal Shopping – Bairro Cristal<br>
-      🗓 30 de Janeiro • ⏰ 19h
-    </p>
+      📅 30 de Janeiro • ⏰ 17h
+    </div>
 
-    <!-- RSVP -->
     <a
       class="button"
-      href="https://wa.me/5551982035451?text=Oi%20Fabi!%20Confirmo%20minha%20presen%C3%A7a%20na%20sua%20festa%20de%2030%20anos%20🎉🥂"
+      href="https://wa.me/55551982035451?text=Oi!%20Confirmo%20minha%20presença%20no%20aniversário%20da%20Fabi%20🎉"
       target="_blank">
       ✅ Confirmar presença
     </a>
 
-    <p class="rsvp-info">
-      Confirmar presença até <strong>19/01</strong>
+    <p class="deadline">
+      Confirmar presença até 19/01
     </p>
-
-    <!-- ROTA -->
-    <a
-      class="button"
-      href="https://www.google.com/maps/dir/?api=1&destination=Av.+Padre+Cacique,+2893,+Porto+Alegre"
-      target="_blank">
-      🗺 Ver rota no Google Maps
-    </a>
-
-    <footer>
-      💖 Esperamos você!
-    </footer>
-
   </div>
 
-  <!-- SCRIPT CONTAGEM -->
   <script>
     const eventDate = new Date("2026-01-30T17:00:00").getTime();
 
-    function updateCountdown() {
+    setInterval(() => {
       const now = new Date().getTime();
       const diff = eventDate - now;
 
-      if (diff <= 0) return;
+      if (diff < 0) return;
 
       document.getElementById("days").innerText =
         Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -214,10 +170,7 @@
         Math.floor((diff / (1000 * 60)) % 60);
       document.getElementById("seconds").innerText =
         Math.floor((diff / 1000) % 60);
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    }, 1000);
   </script>
 
 </body>
